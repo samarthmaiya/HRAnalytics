@@ -1,2 +1,6 @@
 https://www.kaggle.com/PromptCloudHQ/us-technology-jobs-on-dicecom/version/1#dice_com-job_us_sample.csv
+<<<<<<< HEAD
 https://www.kaggle.com/rhuebner/human-resources-data-set
+=======
+https://www.kaggle.com/rhuebner/human-resources-data-set
+>>>>>>> 9a4e0195dc8bd9580083c02247f10cd19b364639

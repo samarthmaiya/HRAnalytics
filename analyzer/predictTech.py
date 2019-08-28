@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[10]:
+# In[4]:
 
 
 import pandas as pd
@@ -11,7 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import sys
 
 
-# In[11]:
+# In[5]:
 
 
 def preprocessing(data):
@@ -19,12 +19,10 @@ def preprocessing(data):
     return tmp.lower()
 
 
-# In[12]:
+# In[6]:
 
 
-def main(data):
-    print("-----------------")
-    print(data)
+def predictTechnology(data):
     df = pd.read_csv('dice_com-job_us_sample.csv')
     df['skills'].dropna(inplace=True)
     trainDF = df['skills'][:50]
@@ -40,26 +38,26 @@ def main(data):
     skillsDF = pd.DataFrame(trainDF)
     frames = [scoreDF, skillsDF]
     result = pd.concat(frames,axis=1)
-    return result.sort_values(by=['score'],ascending=False)[2:3]
+    return result.sort_values(by=['score'],ascending=False)[2:]    
 
 
-# In[19]:
+# In[7]:
 
 
-if __name__ == "__main__":
-    main(sys.argv[1])
+#if __name__ == "__main__":
+#    main(sys.argv[0])
 
 
-# In[5]:
+# In[8]:
 
 
 #predictTechnology('Java, OSS')
 
 
-# In[17]:
+# In[9]:
 
 
-'sam'
+#'sam'
 
 
 # In[ ]:
