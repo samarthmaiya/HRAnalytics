@@ -9,12 +9,14 @@ from flask import jsonify
 from flask import request
 import predictTech
 import predictEmp
-
+import recommendNewTech
+from flask_cors import CORS,cross_origin
 
 # In[3]:
 
 
 app = Flask(__name__)
+#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 # In[13]:
@@ -28,17 +30,26 @@ app = Flask(__name__)
 
 
 @app.route('/rleventtech/<string:technology>', methods=['GET'])
+@cross_origin()
 def returnTech(technology):  
     result = predictTech.predictTechnology(technology)
     return result.to_json()
 
 @app.route('/rleventEmp/<string:technology>', methods=['GET'])
+@cross_origin()
 def returnEmp(technology):  
     empresult = predictEmp.predictEmp(technology)
     return empresult.to_json()
 
+@app.route('/newTech/<string:empid>', methods=['GET'])
+@cross_origin()
+def returnEmpTech(empid):  
+    emptechres = recommendNewTech.recommendNewTech(empid)
+    return emptechres.to_json()
+
 if __name__ == "__main__":
     app.run(debug=True)
+    #app.run(host='10.148.147.221', debug=True, port=3134)
 
 
 # In[ ]:

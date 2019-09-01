@@ -17,12 +17,12 @@ import sys
 samplesize = 201
 
 #read from raw table
-dfSkill = pd.read_csv('dice_com-job_us_sample.csv')
-dfEmp = pd.read_csv('core_dataset.csv')
-skill = dfSkill['skills']
-emp = dfEmp[['Employee Name','Employee Number']]
-frame = [skill,emp]
-df=pd.concat(frame,axis=1)
+#dfSkill = pd.read_csv('dice_com-job_us_sample.csv')
+#dfEmp = pd.read_csv('core_dataset.csv')
+#skill = dfSkill['skills']
+#emp = dfEmp[['Employee Name','Employee Number']]
+#frame = [skill,emp]
+#df=pd.concat(frame,axis=1)
 # In[46]:
 
 
