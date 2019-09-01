@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[143]:
+# In[44]:
 
 
 import pandas as pd
@@ -11,42 +11,37 @@ from sklearn.metrics.pairwise import cosine_similarity
 import sys
 
 
-# In[144]:
+# In[45]:
 
 
 samplesize = 201
 
-
-# In[145]:
-
-
+#read from raw table
 dfSkill = pd.read_csv('dice_com-job_us_sample.csv')
 dfEmp = pd.read_csv('core_dataset.csv')
 skill = dfSkill['skills']
 emp = dfEmp[['Employee Name','Employee Number']]
-
-
-# In[146]:
-
-
 frame = [skill,emp]
 df=pd.concat(frame,axis=1)
+# In[46]:
+
+
+df = pd.read_csv("../dataset/employee_table.csv")
+
+
+# In[47]:
+
+
 df = df[:samplesize]
 
 
-# In[147]:
+# In[48]:
 
 
-#df['skills'][26]
+#df['primaryskill'][26]
 
 
-# In[148]:
-
-
-#testData = df['skills'][26]
-
-
-# In[149]:
+# In[49]:
 
 
 def preprocessing(data):
@@ -54,12 +49,12 @@ def preprocessing(data):
     return tmp.lower()
 
 
-# In[150]:
+# In[50]:
 
 
 def predictEmp(data):
     df.dropna(inplace=True)
-    trainDF = df['skills']
+    trainDF = df['primaryskill']
     trainDF[0]= data
     print(trainDF.shape)
     x = trainDF.apply(preprocessing)
@@ -72,12 +67,6 @@ def predictEmp(data):
     result = pd.concat(frames,axis=1)
     empframe = [result,df['Employee Name'][1:samplesize]]
     processres = pd.concat(empframe,axis=1)
-    sortres = processres.sort_values(by=['score'],ascending=False)[2:] 
+    sortres = processres.sort_values(by=['score'],ascending=False)[2:40] 
     return sortres
-
-
-# In[ ]:
-
-
-
 
