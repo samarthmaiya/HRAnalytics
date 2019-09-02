@@ -12,6 +12,7 @@ import predictEmp
 import recommendNewTech
 import availablejob
 import autonomousjob
+import createjobNotification
 from flask_cors import CORS,cross_origin
 
 # In[3]:
@@ -61,6 +62,19 @@ def openjob():
     openjobdeatils = autonomousjob.availablejob()
     print(openjobdeatils)
     return openjobdeatils.to_json(orient='records')
+    
+@app.route('/createNotification', methods=['POST'])
+@cross_origin()
+def add_income():
+  data = request.get_json()
+  createjobNotification.createNotication(data)
+  return 'done'
+
+@app.route('/getNotification/<string:id>', methods=['GET'])
+@cross_origin()
+def getNotificationInfo(id):  
+    notificationresult = createjobNotification.getNotification(id)
+    return notificationresult.to_json()
 
 if __name__ == "__main__":
     app.run(debug=True)
