@@ -60,7 +60,7 @@ def job():
 def openjob():  
     openjobdeatils = autonomousjob.availablejob()
     print(openjobdeatils)
-    return openjobdeatils.to_json()
+    return openjobdeatils.to_json(orient='records')
 
 if __name__ == "__main__":
     app.run(debug=True)
