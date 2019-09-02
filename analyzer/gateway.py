@@ -10,6 +10,7 @@ from flask import request
 import predictTech
 import predictEmp
 import recommendNewTech
+import availablejob
 from flask_cors import CORS,cross_origin
 
 # In[3]:
@@ -46,6 +47,12 @@ def returnEmp(technology):
 def returnEmpTech(empid):  
     emptechres = recommendNewTech.recommendNewTech(empid)
     return emptechres.to_json()
+    
+@app.route('/availablejob/', methods=['GET'])
+@cross_origin()
+def job():  
+    jobdeatils = availablejob.availablejob()
+    return jobdeatils.to_json()
 
 if __name__ == "__main__":
     app.run(debug=True)
