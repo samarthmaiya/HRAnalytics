@@ -1,0 +1,21 @@
+<!-- <form ng-submit="searchData()">
+    <div class="form-group has-search" style=" margin-top: 1em;">
+        <input type="text" class="form-control searchField" ng-model="searchValue"
+            placeholder="Java, .Net, Nodejs .....">
+    </div>
+</form> -->
+<div class="container">
+    <div class="row" ng-repeat="x in skillFinalData | orderBy : '-score'" style="margin-top: 12px;">
+        <div class="col">
+            <div class="card border-primary mb-3">
+                <div class="card-body">
+                    <h3>Employee Name &nbsp;&nbsp;:&nbsp;&nbsp; {{x.Employee_Name}}</h3>
+                    <h5 class="card-title">Skill&nbsp;&nbsp;:&nbsp;&nbsp;{{x.skill}}</h5>
+
+                </div>
+                <!-- <div style="padding: 10px" align="right">
+                        <button type="button" class="btn btn-primary">Apply</button>
+                    </div> -->
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,16 @@
+
+<div class="container">
+        <div class="row" ng-repeat="x in skillFinalData | orderBy : '-score'" style="margin-top: 12px;">
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <div class="card-body">
+                        <h3>Employee Name &nbsp;&nbsp;:&nbsp;&nbsp; {{x.Employee_Name}}</h3>
+                        <h5 class="card-title">Skill&nbsp;&nbsp;:&nbsp;&nbsp;{{x.skill}}</h5>
+                    </div>
+                        <div style="padding: 10px" align="right" >
+                                <span  ng-click="sendNotification(x.Employee_Name,x.Employee_Id,x.skill)" style="cursor: pointer;
+                                color: blue;">Send Notification</span>
+                    </div>
+                </div>
+            </div>
+        </div>

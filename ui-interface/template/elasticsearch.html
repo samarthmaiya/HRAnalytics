@@ -1,0 +1,77 @@
+<div class="card" style=" margin-top: 1em;" >
+   <div class="row">
+        <div class="col">
+            <div class="card-body">If Data is not coming .May be Data is not Index in ElasticSearch. Please Submit the Button.! </div>
+        </div>
+        <div class="col">
+        <div class="card-body" style="text-align: center;float: right;">
+            <button type="button"  class="btn btn-primary btn-block" ng-click="indexDataToElastic()">Submit</button>
+        </div>
+            
+        </div>
+   </div>
+    
+  </div>
+
+
+<form ng-submit="searchData()" style=" margin-top: 1em;">
+    <div class="form-group has-search" >
+            <!--  <span class="fa fa-search form-control-feedback"></span> -->
+             <input type="text" class="form-control" ng-model="searchValue" placeholder="Search By ID,Name,Sex,Education and Marriage">
+     </div>
+</form>
+<div class="row" ng-show="userInfo!=undefined" style=" margin-top: 2em;">
+    <div class="col">
+         <table id="table_id" class="display">
+                 <thead>
+                     <tr>
+                         <th>ID</th>
+                         <th>Name</th>
+                         <th>LIMIT_BAL</th>
+                         <th>SEX</th>
+                         <th>EDUCATION</th>
+                         <th>MARRIAGE</th>
+                         <th>AGE</th>
+                         <th>Payment in September 2005</th>
+                         <th>Payment in August 2005</th>
+                         <th>Payment in July 2005</th>
+                         <th>Payment in June 2005</th>
+                         <th>Payment in May 2005</th>
+                         <th>Payment in April 2005</th>
+                         <th>Bill in September 2005</th>
+                         <th>Bill in August 2005</th>
+                         <th>Bill in July 2005</th>
+                         <th>Bill in June 2005</th>
+                         <th>Bill in May 2005</th>
+                         <th>Bill in April 2005</th>
+                         <th>DEFAULT PAYMENT</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr ng-repeat="u in userInfo">
+                         <td>{{u.id}}</td>
+                         <td>{{u.name}}</td>
+                         <td>{{u.limit_BAL}}</td>
+                         <td>{{u.sex}}</td>
+                         <td>{{u.education}}</td>
+                         <td>{{u.marriage}}</td>
+                         <td>{{u.age}}</td>
+                         <td>{{u.pay_0}}</td>
+                         <td>{{u.pay_2}}</td>
+                         <td>{{u.pay_3}}</td>
+                         <td>{{u.pay_4}}</td>
+                         <td>{{u.pay_5}}</td>
+                         <td>{{u.pay_6}}</td>
+                         <td>{{u.bill_AMT1}}</td>
+                         <td>{{u.bill_AMT2}}</td>
+                         <td>{{u.bill_AMT3}}</td>
+                         <td>{{u.bill_AMT4}}</td>
+                         <td>{{u.bill_AMT5}}</td>
+                         <td>{{u.bill_AMT6}}</td>
+                         <td>{{u.defaultPayment}}</td>
+                     </tr>
+                 </tbody>
+             </table>
+             
+    </div>
+ </div>

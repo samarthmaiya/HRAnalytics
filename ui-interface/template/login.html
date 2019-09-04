@@ -1,0 +1,58 @@
+<style>
+.boarder{
+   font-size: 1.2em;
+   padding: 20px;
+   border-width: 1px;
+   border-style: solid;
+   
+   
+}
+.red-square {
+  border-color: #007bff;
+  border-width: 1px;
+   border-style: solid;
+  width: 350px;
+  height: 300px;
+  position: absolute;
+  padding: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+  
+    <div class="red-square" style="position: absolute;top: 50%;left: 50%;">
+        <form >
+            <div class="form-group">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" id="email" ng-model='user.email'>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd" ng-model='user.password'>
+            </div>
+            <div class="form-group form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary" ng-click="submit(user)">Submit</button>
+          </form>
+
+          <div class="toast" data-autohide="false">
+              <div class="toast-header">
+                <strong class="mr-auto text-primary">{{toastHeader}}</strong>
+                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+              </div>
+              <div class="toast-body">
+                {{toastBody}}
+              </div>
+            </div>
+    </div>
+   
+
+
+
+

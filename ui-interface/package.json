@@ -1,0 +1,25 @@
+{
+  "name": "digital-hack-up",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --port=8181"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.22",
+    "angular": "^1.7.7",
+    "angular-page-loader": "^1.0.2",
+    "bootstrap": "^4.3.1",
+    "datatables": "^1.10.18",
+    "highcharts": "^7.0.3",
+    "jquery": "^3.0.0",
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/angular": "^1.6.56"
+  }
+}

@@ -1,0 +1,35 @@
+<div></div>
+<!-- <form ng-submit="searchData()">
+        <div class="form-group has-search" style=" margin-top: 1em;">
+                 <input type="text" class="form-control" ng-model="searchValue" placeholder="Search">
+         </div>
+</form> -->
+
+<div class="container">
+  
+    <div ng-repeat="hrdata in skillFinalData" >
+      <div class="card border-primary mb-3" >
+        <!-- <div class="card-header">Header</div> -->
+        <div class="card-body ">
+          <h3>JobId &nbsp;&nbsp;:&nbsp;&nbsp; {{hrdata.Job_Id}}</h3>
+          <h5 class="card-title">Job Title &nbsp;&nbsp;:&nbsp;&nbsp; {{hrdata.jobtitle}}</h5>
+          <h5>Vacancies&nbsp;&nbsp;:&nbsp;&nbsp;{{hrdata.Vacancies}}</h5>
+          <h5>Position_Close_Date&nbsp;&nbsp;:&nbsp;&nbsp;{{hrdata.Position_Close_Date}}</h5>
+          <h5>Skill &nbsp;&nbsp;:&nbsp;&nbsp; {{hrdata.skill}}</h5>
+          <h5>Location &nbsp;&nbsp;:&nbsp;&nbsp;{{hrdata.joblocation_address}}</h5>
+          <p class="card-text">Description &nbsp;&nbsp;:&nbsp;&nbsp;{{hrdata.jobdescription}}</p>
+        </div>
+        <div style="padding: 10px" align="right">
+           <a ui-sref="employee({skills: hrdata.skill})">find Employee</a>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+
+
+
+
+

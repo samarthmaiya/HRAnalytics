@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- edit -->
+<html ng-app="App">
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <title>Hr Police</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+        <script typr="text/javascript" src="./node_modules/datatables/media/js/jquery.dataTables.min.js"></script>  
+        <script typr="text/javascript" src="./node_modules/angular-page-loader/dist/angular-page-loader.min.js"></script>  
+        <script typr="text/javascript" src="./node_modules/highcharts/highcharts.js"></script>  
+        <script typr="text/javascript" src="./node_modules/highcharts/highcharts-3d.js"></script> 
+        <script typr="text/javascript" src="./node_modules/highcharts/modules/cylinder.js"></script> 
+        <script typr="text/javascript" src="./node_modules/highcharts/modules/exporting.js"></script> 
+        <script typr="text/javascript" src="./node_modules/highcharts/modules/export-data.js"></script> 
+
+        
+        <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+       <link rel="stylesheet" href="./node_modules/datatables/media/css/jquery.dataTables.min.css">
+       <link rel="stylesheet" href="./node_modules/angular-page-loader/dist/angular-page-loader.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <style>
+            .navbar { border-radius:0; }
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+        </style>
+    </head>
+   
+    <body ng-app="App" ng-controller="appControler">
+        <!-- NAVIGATION -->
+        <!-- <div class="lds-spinner" ng-show="isLoading"></div>
+        <div class="loader" ng-show="isLoading"></div> -->
+        <!-- <div id="loader"></div> -->
+       <!--  <page-loader flag="isLoading"></page-loader> -->
+<!--Navbar -->
+<!-- User Profile Nav bar  -->
+<div id="notificationId" class="alert alert-success costome_alert" role="alert" style="display: none">
+{{notificatioData}}    
+</div>
+
+
+
+<div ng-show="checkRole()" >
+<nav id="employee" class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1" style="background-color: black;display: none">
+    <a class="navbar-brand" style="color: white">Employee demand -HrAnalytics</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+      aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <!-- active -->
+          <a class="nav-link" ui-sref="search">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="employee-recomendation">Recomendation</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Dropdown
+          </a>
+          <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item" ui-sref="Notification">
+          <a class="nav-link waves-effect waves-light">1
+            <i class="fas fa-envelope"></i>
+          </a>
+        </li>
+        <li class="nav-item avatar dropdown">
+          <a class="nav-link " id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="padding: 0%">
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" style="height: 42px;" class="rounded-circle z-depth-0"
+              alt="avatar image">
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+            aria-labelledby="navbarDropdownMenuLink-55">
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#" ng-click="requestForLogout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--/.Navbar -->
+  <!-- Hr Nav Bar  -->
+  <nav id="hrtab" class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1" style="background-color: black;display: none">
+      <a class="navbar-brand" href="#">Employee demand -HrAnalytics</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+        aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <!-- active -->
+            <a class="nav-link" ui-sref="hrsearch">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="open-project">Open Project</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Dropdown
+            </a>
+            <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-333">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light">1
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+          <li class="nav-item avatar dropdown">
+            <a class="nav-link " id="navbarDropdownMenuLink-33" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style="padding: 0%">
+              <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" style="height: 42px;" class="rounded-circle z-depth-0"
+                alt="avatar image">
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+              aria-labelledby="navbarDropdownMenuLink-33">
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <a class="dropdown-item" href="#" ng-click="requestForLogout()">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+</div>
+
+        <!-- MAIN CONTENT -->
+        <div class="container" >
+            <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+            <div ui-view></div>
+
+        </div>
+    </body>
+   
+
+    <!-- edit -->
+    <script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src='./Controller/LoginController.js'></script>
+     <script type="text/javascript" src='./Controller/empSearchController.js'></script> 
+    <script type="text/javascript" src='./Controller/CommService.js'></script>
+    <script type="text/javascript" src='./js/directive.js'></script>
+    <script type="text/javascript" src='./Controller/ElasticSearchController.js'></script>
+    <script type="text/javascript" src='./Controller/chartviewController.js'></script>
+    <script type="text/javascript" src='./Controller/hrSearchController.js'></script>
+    <script type="text/javascript" src='./Controller/JobProfileController.js'></script>
+  <script type="text/javascript" src='./Controller/JobProfileController.js'></script> 
+</html>

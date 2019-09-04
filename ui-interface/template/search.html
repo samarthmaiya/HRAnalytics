@@ -1,0 +1,122 @@
+<style>
+.searchField{
+  padding: 32px;
+    border-radius: 19px;
+    width: 97%;
+    margin-left: 15px;
+}
+</style>
+<div></div>
+<form ng-submit="searchData()">
+        <div class="form-group has-search" style=" margin-top: 1em;">
+                <!--  <span class="fa fa-search form-control-feedback"></span> -->
+                 <input type="text" class="form-control searchField" ng-model="searchValue" placeholder="Java, .Net, Nodejs .....">
+         </div>
+</form>
+<!-- 
+<div class="container">
+  
+    <div ng-repeat="friend in friends" >
+      <div class="card border-primary mb-3" >
+        <div class="card-header">Header</div>
+        <div class="card-body text-primary">
+          <h5 class="card-title">Bappy Project</h5>
+         
+          <div class="card-text"> <span class="fas fa-briefcase"></span>2-5 yrs</div>
+        </div>
+      </div>
+    </div>
+  
+</div> -->
+
+<!-- 
+<tr ng-repeat="x in skillFinalData | orderBy : '-skillscore'">
+    <td>{{x.skill}}</td>
+    <td>{{x.skillscore}}</td>
+    <td>{{x.jobId}}</td>
+    <td>{{x.jobdescription}}</td> -->
+
+<div class="container">
+  <div class="row" ng-repeat="x in skillFinalData | orderBy : '-skillscore'" style="margin-top: 12px;">
+     <div class="col">
+        <div class="card border-primary mb-3">
+           
+            <div class="card-body">
+                <h3>JobId&nbsp;&nbsp;:&nbsp;&nbsp;{{x.jobId}}</h3>  
+                <h4 class="card-title">Skill&nbsp;&nbsp;:&nbsp;&nbsp;{{x.skill}}</h4>
+                <p class="card-text">discription&nbsp;&nbsp;:&nbsp;&nbsp;{{x.jobdescription}}</p>
+                
+            </div>
+            <div style="padding: 10px" align="right">
+                <button type="button" class="btn btn-primary" ui-sref="jobprofile">Apply</button>
+            </div>
+           
+        </div>
+     </div>
+  </div>
+    
+<!-- <div class="table-responsive table-hover">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Skill</th>
+        <th>Firstname</th> 
+         <th>Lastname</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Sex</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in skillFinalData | orderBy : '-skillscore'">
+        <td>{{x.skill}}</td>
+        <td>{{x.skillscore}}</td>
+        <td>{{x.jobId}}</td>
+        <td>{{x.jobdescription}}</td>
+        <td>Pitt</td>
+        <td>35</td>
+        <td>New York</td>
+        <td>USA</td>
+        <td>Female</td>
+        
+      </tr>
+    </tbody>
+  </table> -->
+</div>
+
+
+
+
+
+
+<!-- <div class="table-responsive">
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Balance</th>
+                    <th>Sex</th>
+                    <th>Education</th>
+                    <th>Marriage</th>
+                    <th>Age</th>
+                  </tr>
+                </thead>
+            
+                <tbody>
+                  <tr>
+                     
+                    <td>{{userInfo.Name}}</td>
+                    <td>{{userInfo.LIMIT_BAL}}</td>
+                    <td>{{userInfo.SEX}}</td>
+                    <td>{{userInfo.EDUCATION}}</td>
+                    <td>{{userInfo.MARRIAGE}}</td>
+                    <td>{{userInfo.AGE}}</td>
+                  </tr>
+                </tbody>
+              </table>
+      </div> -->
+
+
+    
