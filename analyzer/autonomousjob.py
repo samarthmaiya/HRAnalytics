@@ -32,7 +32,7 @@ def process(grp):
 
 def availablejob():
     dfData = pd.read_csv('../dataset/project_distribution.csv')
-    dfData = dfData[['projectid','jobid','project','skills','status']]
+    dfData = dfData[['projectid','jobid','project','skills','status','jobdescription']]
     grp = dfData.groupby(['projectid','jobid'])
     res = process(grp)
     return res

@@ -65,7 +65,7 @@ def predictEmp(data):
     skillsDF = pd.DataFrame(trainDF)
     frames = [scoreDF, skillsDF]
     result = pd.concat(frames,axis=1)
-    empframe = [result,df['Employee Name'][1:samplesize]]
+    empframe = [result,df[['Employee Name','Employee Number']][1:samplesize]]
     processres = pd.concat(empframe,axis=1)
     sortres = processres.sort_values(by=['score'],ascending=False)[2:40] 
     return sortres
