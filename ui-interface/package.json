@@ -15,7 +15,7 @@
     "angular-page-loader": "^1.0.2",
     "bootstrap": "^4.3.1",
     "datatables": "^1.10.18",
-    "highcharts": "^7.0.3",
+    "highcharts": "^7.2.2",
     "jquery": "^3.0.0",
     "live-server": "^1.2.1"
   },
