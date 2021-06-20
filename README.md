@@ -24,9 +24,3 @@ App will be open in
 
 http://localhost:8181
 
-contributor
-----------------------------------------------------
-Deepak
-Saikath
-Pranav
-Samarth
